@@ -14,11 +14,11 @@ const reducer = combineReducers(reducers);
 const store = createStoreWithMiddleware(reducer);
 
 export default class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-		<Nav />
-      </Provider>
-    );
-  }
+	render() {
+		return (
+			<Provider store={store}>
+				<Nav />
+			</Provider>
+		);
+	}
 }

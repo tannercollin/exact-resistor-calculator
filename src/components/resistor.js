@@ -78,7 +78,8 @@ class Resistor extends Component {
 						<Picker.Item label="  Ω" value="1" />
 						<Picker.Item label="  mΩ" value="0.001" />
 				</Picker>
-				<TouchableOpacity onPress={() => { 
+				<TouchableOpacity
+					onPress={() => { 
 						console.log(this);
 						Alert.alert(
 							'Clear resistor value?',
@@ -93,7 +94,8 @@ class Resistor extends Component {
 								{text: 'OK', onPress: clear},
 							]
 						)
-					}} style={styles.clearbutton} activeOpacity={1}
+					}}
+					style={styles.clearbutton} activeOpacity={1}
 				>
 					<Text>Clear</Text>
 				</TouchableOpacity>
@@ -118,7 +120,7 @@ function mapStateToProps(state, ownProps) {
 }
 
 export default connect(mapStateToProps,
-  (dispatch) => ({
-    actions: bindActionCreators(calcActions, dispatch)
-  })
+	(dispatch) => ({
+		actions: bindActionCreators(calcActions, dispatch)
+	})
 )(Resistor);

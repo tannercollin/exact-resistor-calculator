@@ -11,19 +11,19 @@ const styles = StyleSheet.create({
 });
 
 export default class Menu extends Component {
-  constructor(props) {
-    super(props);
-  }
+	constructor(props) {
+		super(props);
+	}
 
-  render() {
-    const { main, help } = this.props;
+	render() {
+		const { main, help } = this.props;
 
-    return (
-      <View style={styles.main}>
-		<Text onPress={main}>Calculator</Text>
-        <Text onPress={help}>Help</Text>
-        <Text>Link 4</Text>
-      </View>
-    );
-  }
+		return (
+			<View style={styles.main}>
+				<Text onPress={main}>Calculator</Text>
+				<Text onPress={help}>Help</Text>
+				<Text>Link 4</Text>
+			</View>
+		);
+	}
 }

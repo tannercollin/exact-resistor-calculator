@@ -12,32 +12,32 @@ const initialState = {
 };
 
 export default function menu(state = initialState, action = {}) {
-  switch (action.type) {
-    case types.MENUOPEN:
-      return {
-        ...state,
-		isOpen: true,
-      };
-    case types.MENUCLOSE:
-      return {
-        ...state,
-		isOpen: false,
-      };
-    case types.MAIN:
-      return {
-        ...state,
-		isOpen: false,
-        page: <CalcApp />,
-		subtitle: 'Calculator Page',
-      };
-    case types.HELP:
-      return {
-        ...state,
-		isOpen: false,
-        page: <HelpApp />,
-		subtitle: 'Help',
-      };
-    default:
-      return state;
-  }
+	switch (action.type) {
+		case types.MENUOPEN:
+			return {
+				...state,
+				isOpen: true,
+			};
+		case types.MENUCLOSE:
+			return {
+				...state,
+				isOpen: false,
+			};
+		case types.MAIN:
+			return {
+				...state,
+				isOpen: false,
+				page: <CalcApp />,
+				subtitle: 'Calculator Page',
+			};
+		case types.HELP:
+			return {
+				...state,
+				isOpen: false,
+				page: <HelpApp />,
+				subtitle: 'Help',
+			};
+		default:
+			return state;
+	}
 }

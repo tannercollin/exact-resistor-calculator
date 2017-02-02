@@ -7,24 +7,22 @@ import * as menuActions from '../actions/menuActions';
 import { connect } from 'react-redux';
 
 class MenuApp extends Component {
-  constructor(props) {
-    super(props);
-  }
+	constructor(props) {
+		super(props);
+	}
 
-  render() {
-    const { state, actions } = this.props;
-    return (
-      <Menu {...actions} />
-    );
-  }
+	render() {
+		const { state, actions } = this.props;
+		return (
+			<Menu {...actions} />
+		);
+	}
 }
 
 export default connect(state => ({
-    state: state
-  }),
-  (dispatch) => ({
-    actions: bindActionCreators(menuActions, dispatch)
-  })
-)(MenuApp);
+	state: state
+}), (dispatch) => ({
+	actions: bindActionCreators(menuActions, dispatch)
+}))(MenuApp);
 
 

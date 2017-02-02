@@ -6,22 +6,18 @@ import Help from '../components/help';
 import { connect } from 'react-redux';
 
 class HelpApp extends Component {
-  constructor(props) {
-    super(props);
-  }
+	constructor(props) {
+		super(props);
+	}
 
-  render() {
-    const { state, actions } = this.props;
-    return (
-      <Help
-        {...actions} />
-    );
-  }
+	render() {
+		const { state, actions } = this.props;
+		return (
+			<Help {...actions} />
+		);
+	}
 }
 
 export default connect(state => ({
-  }),
-  (dispatch) => ({
-  })
-)(HelpApp);
-
+	}), (dispatch) => ({
+}))(HelpApp);
