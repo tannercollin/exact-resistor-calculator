@@ -17,3 +17,9 @@ export function updatemult(form, index, mult) {
 		mult,
 	};
 }
+
+export function clearall() {
+	return {
+		type: types.CLEARALL,
+	};
+}

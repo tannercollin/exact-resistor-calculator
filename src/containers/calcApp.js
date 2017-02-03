@@ -11,7 +11,6 @@ class CalcApp extends Component {
 
 	render() {
 		const {state} = this.props;
-		console.log(this);
 
 		return (
 			<Calc state={state}/>

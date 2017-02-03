@@ -52,12 +52,10 @@ class Resistor extends Component {
 			updatemult('1');
 		}
 
-		console.log(this);
-
 		return (
 			<View style={{flex: 1, flexDirection: 'row', justifyContent: 'center', margin: 3}}>
 				<TextInput
-					value={data.value}
+					value={data.value || ''}
 					onChangeText={(x) => updatevalue(x)}
 					style={Object.assign({}, styles.resistorinput, {
 						borderColor: data.valid ? 'grey' : 'red',
@@ -79,9 +77,8 @@ class Resistor extends Component {
 						<Picker.Item label="  mΩ" value="0.001" />
 				</Picker>
 				<TouchableOpacity
-					onPress={() => { 
-						console.log(this);
-						Alert.alert(
+					onPress={() => {
+						data.value ? Alert.alert(
 							'Clear resistor value?',
 							data.value + 
 							// I created this kludge for fun (so don't hate on me):
@@ -93,7 +90,7 @@ class Resistor extends Component {
 								{text: 'CANCEL'},
 								{text: 'OK', onPress: clear},
 							]
-						)
+						) : null ;
 					}}
 					style={styles.clearbutton} activeOpacity={1}
 				>
@@ -119,8 +116,6 @@ function mapStateToProps(state, ownProps) {
 	}
 }
 
-export default connect(mapStateToProps,
-	(dispatch) => ({
-		actions: bindActionCreators(calcActions, dispatch)
-	})
-)(Resistor);
+export default connect(mapStateToProps, (dispatch) => ({
+	actions: bindActionCreators(calcActions, dispatch)
+}))(Resistor);

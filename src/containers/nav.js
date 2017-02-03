@@ -18,7 +18,7 @@ class Nav extends Component {
 		const { state, actions } = this.props;
 
 		const drawerStyles = {
-			drawer: { shadowColor: '#000000', shadowOpacity: 0.8, shadowRadius: 3},
+			drawer: {shadowColor: '#000000', shadowOpacity: 0.8, shadowRadius: 3},
 			main: {paddingLeft: 3},
 		}
 		const styles = StyleSheet.create({
@@ -34,8 +34,8 @@ class Nav extends Component {
 				type="overlay"
 				content={<MenuApp />}
 				tapToClose={true}
-				openDrawerOffset={0.3}
-				captureGestures={false}
+				openDrawerOffset={(viewport) => viewport.width - 250}
+				captureGestures={true}
 				panCloseMask={0.3}
 				closedDrawerOffset={-3}
 				styles={drawerStyles}

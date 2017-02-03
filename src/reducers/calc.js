@@ -91,6 +91,8 @@ export default function calc(state = initialState, action = {}) {
 					),
 				};
 			}
+		case types.CLEARALL:
+			return initialState;
 		default:
 			return state;
 	}
