@@ -3,4 +3,4 @@
 import React, { AppRegistry } from 'react-native';
 import App from './src/containers/app';
 
-AppRegistry.registerComponent('Counter', () => App);
+AppRegistry.registerComponent('exactresistorcalculator', () => App);

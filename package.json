@@ -1,13 +1,16 @@
 {
-  "name": "Counter",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "react-native start",
-    "setup_project": "npm run step1; npm run step2",
-    "step1": "rm -rf node_modules/react-native/node_modules/react; rm -rf node_modules/react-native/node_modules/fbjs; rm -rf node_modules/react/node_modules/fbjs",
-    "step2": "cd node_modules; find . -name .babelrc | grep -v packager | xargs rm"
+  "name": "exact-resistor-calculator",
+  "version": "1.0.0",
+  "description": "Recommends resistors to combine in parallel to meet an exact target.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tannercollin/exact-resistor-calculator"
   },
+  "scripts": {
+    "start": "react-native start"
+  },
+  "author": "Tanner Collin (http://github.com/tannercollin)",
+  "license": "MIT",
   "dependencies": {
     "react": "15.3.2",
     "react-native": "0.34.0",

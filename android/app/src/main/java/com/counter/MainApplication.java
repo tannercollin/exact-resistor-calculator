@@ -1,4 +1,4 @@
-package com.counter;
+package com.exactresistorcalculator;
 
 import android.app.Application;
 import android.util.Log;
