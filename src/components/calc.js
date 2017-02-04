@@ -129,7 +129,7 @@ export default class Calc extends Component {
 							onPress={() => {
 								Alert.alert(
 									'No Solution Exists',
-									'This app recommends resistors to be added in parallel. It\'s impossible to increase resistance (to make it closer to the target) by adding another resistor in parallel.\n\nPlease remove the lowest value resistor if you wish to keep solving.',
+									'This app recommends resistors to be added in parallel. It\'s impossible to increase resistance (to make it closer to the target) by adding another resistor in parallel.\n\nPlease remove the resistor and find a higher one if you wish to keep solving.',
 									[{text: 'OK'}]
 								);
 							}}

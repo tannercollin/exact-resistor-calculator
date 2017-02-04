@@ -58,7 +58,7 @@ class Resistor extends Component {
 					value={data.value || ''}
 					onChangeText={(x) => updatevalue(x)}
 					style={Object.assign({}, styles.resistorinput, {
-						borderColor: data.valid ? 'grey' : 'red',
+						borderColor: data.valid ? '#3f7d20' : 'red',
 					})}
 					underlineColorAndroid={'transparent'}
 					autoCorrect={false}
