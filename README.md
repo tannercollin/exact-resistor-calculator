@@ -26,12 +26,14 @@ Exact Resistor Calculator is free and open-source software released under the MI
 ### Building
 
 Building Exact Resistor Calculator from source is very easy.
-Clone this repository, set up react-native, and then run these commands:
+Clone this repository, [set up react-native](https://facebook.github.io/react-native/docs/getting-started.html), and then run these commands:
 
 ```
 $ npm install
 $ react-native run-android
+	# A red error screen should now appear: "Could not get BatchedBridge..."
 $ react-native start
+	# Once it's started, press Reload on the red screen
 ```
 
 If you want to debug on your physical phone, be sure to run ```adb reverse tcp:8081 tcp:8081``` first.
