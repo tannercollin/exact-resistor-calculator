@@ -1,14 +1,20 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import {Image, ScrollView, StyleSheet, View, TouchableOpacity} from 'react-native';
 
-const styles = StyleSheet.create({
+import MyText from './mytext.js';
+
+const styles = {
 	main: {
 		backgroundColor: '#ffffff',
 		flex: 1,
-		alignItems: 'center',
-		justifyContent: 'center',
 	},
-});
+	menutable: {
+		borderBottomColor: 'lightgrey',
+		borderBottomWidth: 1,
+		padding: 15,
+		fontSize: 16,
+	},
+};
 
 export default class Menu extends Component {
 	constructor(props) {
@@ -20,9 +26,13 @@ export default class Menu extends Component {
 
 		return (
 			<View style={styles.main}>
-				<Text onPress={main}>Calculator</Text>
-				<Text onPress={help}>Help</Text>
-				<Text>Link 4</Text>
+				<ScrollView>
+					<Image style={{alignSelf: 'flex-start', height: 121.30401, width: 250}} source={require('../images/menulogo.png')} resizeMode={'contain'} />
+					<MyText style={styles.menutable} onPress={main}>Calculator</MyText>
+					<MyText style={styles.menutable} onPress={help}>Help</MyText>
+					<MyText style={styles.menutable} onPress={null}>Tips</MyText>
+					<MyText style={[styles.menutable, {borderBottomWidth: 0}]} onPress={null}>About</MyText>
+				</ScrollView>
 			</View>
 		);
 	}

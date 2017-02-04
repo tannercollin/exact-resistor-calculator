@@ -18,6 +18,18 @@ function getUnit(n) {
 	}
 }
 
+function significantDigits(num) {
+	// http://bateru.com/news/2011/04/code-of-the-day-javascript-significant-figures/
+	var n = String(num).trim(),
+		FIND_FRONT_ZEROS_SIGN_DOT_EXP = /^[\D0]+|\.|([e][^e]+)$/g,
+		FIND_RIGHT_ZEROS = /0+$/g;
+
+	if (!/\./.test(num)) {
+		n = n.replace(FIND_RIGHT_ZEROS, "");
+	}
+	return n.replace(FIND_FRONT_ZEROS_SIGN_DOT_EXP, "").length;
+};
+
 const styles = {
 	table: {
 		borderBottomColor: 'lightgrey',
@@ -40,20 +52,14 @@ export default class Calc extends Component {
 		const haveAllValid = state.have.every((x) => x.valid);
 		const haveNonEmpty = state.have.some((x) => x.value);
 
-		const precision = () => {
-			if (targetValid && targetNonEmpty) {
-				const pieces = state.target.value.split('.');
-				if (pieces[1]) {
-					if (pieces[1].length > 20) {
-						return 20; // Max toFixed() allows
-					}
-					if (pieces[1].length > 2) {
-						return pieces[1].length;
-					}
-				}
-			}
-			return 2;
-		};
+		const sigDigs = targetValid && targetNonEmpty ?
+			significantDigits(state.target.value) : 0;
+
+		let precision = 3;
+		if (sigDigs > 3) {
+			// toPrecision() has a max of 20
+			precision = sigDigs > 20 ? 20 : sigDigs;
+		}
 
 		const targetRes = state.target.value * state.target.mult;
 
@@ -71,7 +77,7 @@ export default class Calc extends Component {
 			if (haveAllValid && haveNonEmpty) {
 				const {unit, mult} = getUnit(sum);
 				const val = sum / mult;
-				return val.toFixed(precision()) + unit;
+				return val.toPrecision(precision) + unit;
 			} else {
 				return '---';
 			}
@@ -81,18 +87,17 @@ export default class Calc extends Component {
 			if (targetValid && targetNonEmpty && haveAllValid && haveNonEmpty) {
 				// Check if the 'overall resistor value' matches the target
 				const {unit, mult} = getUnit(targetRes);
-				console.log((targetRes / mult).toFixed(precision()) + unit);
-				if (printSum() === (targetRes / mult).toFixed(precision()) + unit) {
-					return (0.0).toFixed(precision());
+				if (printSum() === (targetRes / mult).toPrecision(precision) + unit) {
+					return (0.0).toPrecision(precision);
 				}
-				return percentError.toFixed(precision());
+				return percentError.toPrecision(precision);
 			} else {
 				return '---';
 			}
 		};
 
 		const printNextRes= () => {
-			if (targetValid && targetNonEmpty && haveAllValid && haveNonEmpty) {
+			if (targetValid && targetNonEmpty && haveAllValid) {
 				// Check if we are done because error is 0 or value's exact
 				if (nextRes == Infinity || printPercentError() == 0.0) {
 					return 'Done.';
@@ -101,7 +106,7 @@ export default class Calc extends Component {
 				}
 				const {unit, mult} = getUnit(nextRes);
 				const val = nextRes / mult;
-				return val.toFixed(precision()) + unit;
+				return val.toPrecision(precision) + unit;
 			} else {
 				return '---';
 			}

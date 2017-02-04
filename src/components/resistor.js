@@ -52,7 +52,7 @@ class Resistor extends Component {
 			updatemult('1');
 		}
 
-		return (
+		return data ? (
 			<View style={{flex: 1, flexDirection: 'row', justifyContent: 'center', margin: 3}}>
 				<TextInput
 					value={data.value || ''}
@@ -97,7 +97,7 @@ class Resistor extends Component {
 					<Text>Clear</Text>
 				</TouchableOpacity>
 			</View>
-		);
+		) : null;
 	}
 }
 

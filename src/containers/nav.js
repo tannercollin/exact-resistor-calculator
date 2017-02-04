@@ -1,6 +1,6 @@
 'use strict'; 
 import React, {Component} from 'react';
-import {View, StyleSheet} from 'react-native';
+import {Navigator, View, StyleSheet} from 'react-native';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -8,6 +8,8 @@ import Drawer from 'react-native-drawer';
 
 import * as menuActions from '../actions/menuActions';
 import MenuApp from '../containers/menuApp';
+import CalcApp from '../containers/calcApp';
+import HelpApp from '../containers/helpApp';
 
 class Nav extends Component {
 	constructor(props) {
@@ -52,7 +54,18 @@ class Nav extends Component {
 					title="Exact Resistor Calculator"
 				/>
 				<View style={{flex: 1}}>
-					{state.page}
+					<Navigator
+						renderScene={(route, navigator) => {
+							switch (state.page) {
+								case 'main':
+									return <CalcApp />;
+								case 'help':
+									return <HelpApp />;
+								default:
+									return <CalcApp />;
+							}
+						}}
+					/>
 				</View>
 			</Drawer>
 		);
