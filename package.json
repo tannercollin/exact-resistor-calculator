@@ -1,5 +1,5 @@
 {
-  "name": "exact-resistor-calculator",
+  "name": "exactresistorcalculator",
   "version": "1.0.0",
   "description": "Recommends resistors to combine in parallel to meet an exact target.",
   "repository": {
@@ -12,8 +12,8 @@
   "author": "Tanner Collin (http://github.com/tannercollin)",
   "license": "MIT",
   "dependencies": {
-    "react": "15.3.2",
-    "react-native": "0.34.0",
+    "react": "^15.4.1",
+    "react-native": "^0.41.1",
     "react-native-drawer": "^2.3.0",
     "react-native-vector-icons": "^4.0.0",
     "react-redux": "4.4.5",
