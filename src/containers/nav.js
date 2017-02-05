@@ -12,6 +12,7 @@ import ChartApp from '../containers/chartApp';
 import CalcApp from '../containers/calcApp';
 import HelpApp from '../containers/helpApp';
 import ExampleApp from '../containers/exampleApp';
+import AboutApp from '../containers/aboutApp';
 
 class Nav extends Component {
 	constructor(props) {
@@ -66,6 +67,8 @@ class Nav extends Component {
 									return <HelpApp />;
 								case 'example':
 									return <ExampleApp />;
+								case 'about':
+									return <AboutApp />;
 								default:
 									return <CalcApp />;
 							}

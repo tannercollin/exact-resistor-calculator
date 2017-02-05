@@ -7,3 +7,4 @@ export const MAIN = 'MAIN';
 export const CHART = 'CHART';
 export const HELP = 'HELP';
 export const EXAMPLE = 'EXAMPLE';
+export const ABOUT = 'ABOUT';

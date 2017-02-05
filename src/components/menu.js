@@ -22,7 +22,7 @@ export default class Menu extends Component {
 	}
 
 	render() {
-		const {main, chart, help, example} = this.props;
+		const {about, main, chart, help, example} = this.props;
 
 		return (
 			<View style={styles.main}>
@@ -33,7 +33,7 @@ export default class Menu extends Component {
 					<MyText style={styles.menutable} onPress={help}>Help</MyText>
 					<MyText style={styles.menutable} onPress={example}>Example</MyText>
 					<MyText style={styles.menutable} onPress={null}>Tips</MyText>
-					<MyText style={[styles.menutable, {borderBottomWidth: 0}]} onPress={null}>About</MyText>
+					<MyText style={[styles.menutable, {borderBottomWidth: 0}]} onPress={about}>About</MyText>
 				</ScrollView>
 				<Image style={{alignSelf: 'flex-end', height: 20, width: 116}} source={require('../images/menulogobottom.png')} resizeMode={'contain'} />
 			</View>

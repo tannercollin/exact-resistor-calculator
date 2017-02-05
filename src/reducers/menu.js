@@ -48,6 +48,13 @@ export default function menu(state = initialState, action = {}) {
 				page: 'example',
 				subtitle: 'Example Usage',
 			};
+		case types.ABOUT:
+			return {
+				...state,
+				isOpen: false,
+				page: 'about',
+				subtitle: 'About',
+			};
 		default:
 			return state;
 	}

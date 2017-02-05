@@ -35,3 +35,9 @@ export function example() {
 		type: types.EXAMPLE
 	};
 }
+
+export function about() {
+	return {
+		type: types.ABOUT
+	};
+}
