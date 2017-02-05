@@ -8,6 +8,7 @@ import Drawer from 'react-native-drawer';
 
 import * as menuActions from '../actions/menuActions';
 import MenuApp from '../containers/menuApp';
+import ChartApp from '../containers/chartApp';
 import CalcApp from '../containers/calcApp';
 import HelpApp from '../containers/helpApp';
 import ExampleApp from '../containers/exampleApp';
@@ -59,6 +60,8 @@ class Nav extends Component {
 							switch (state.page) {
 								case 'main':
 									return <CalcApp />;
+								case 'chart':
+									return <ChartApp />;
 								case 'help':
 									return <HelpApp />;
 								case 'example':

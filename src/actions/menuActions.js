@@ -18,6 +18,12 @@ export function main() {
 	};
 }
 
+export function chart() {
+	return {
+		type: types.CHART
+	};
+}
+
 export function help() {
 	return {
 		type: types.HELP

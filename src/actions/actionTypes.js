@@ -4,5 +4,6 @@ export const CLEARALL = 'CLEARALL';
 export const MENUOPEN = 'MENUOPEN';
 export const MENUCLOSE = 'MENUCLOSE';
 export const MAIN = 'MAIN';
+export const CHART = 'CHART';
 export const HELP = 'HELP';
 export const EXAMPLE = 'EXAMPLE';

@@ -27,6 +27,13 @@ export default function menu(state = initialState, action = {}) {
 				page: 'main',
 				subtitle: 'Calculator Page',
 			};
+		case types.CHART:
+			return {
+				...state,
+				isOpen: false,
+				page: 'chart',
+				subtitle: 'Color Chart',
+			};
 		case types.HELP:
 			return {
 				...state,

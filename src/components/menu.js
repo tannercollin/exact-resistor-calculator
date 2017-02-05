@@ -22,13 +22,14 @@ export default class Menu extends Component {
 	}
 
 	render() {
-		const {main, help, example} = this.props;
+		const {main, chart, help, example} = this.props;
 
 		return (
 			<View style={styles.main}>
 				<ScrollView>
 					<Image style={{alignSelf: 'flex-start', height: 121.30401, width: 250}} source={require('../images/menulogo.png')} resizeMode={'contain'} />
 					<MyText style={styles.menutable} onPress={main}>Calculator</MyText>
+					<MyText style={styles.menutable} onPress={chart}>Color Chart</MyText>
 					<MyText style={styles.menutable} onPress={help}>Help</MyText>
 					<MyText style={styles.menutable} onPress={example}>Example</MyText>
 					<MyText style={styles.menutable} onPress={null}>Tips</MyText>
