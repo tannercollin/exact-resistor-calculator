@@ -22,7 +22,7 @@ export default class Menu extends Component {
 	}
 
 	render() {
-		const { main, help } = this.props;
+		const {main, help, example} = this.props;
 
 		return (
 			<View style={styles.main}>
@@ -30,6 +30,7 @@ export default class Menu extends Component {
 					<Image style={{alignSelf: 'flex-start', height: 121.30401, width: 250}} source={require('../images/menulogo.png')} resizeMode={'contain'} />
 					<MyText style={styles.menutable} onPress={main}>Calculator</MyText>
 					<MyText style={styles.menutable} onPress={help}>Help</MyText>
+					<MyText style={styles.menutable} onPress={example}>Example</MyText>
 					<MyText style={styles.menutable} onPress={null}>Tips</MyText>
 					<MyText style={[styles.menutable, {borderBottomWidth: 0}]} onPress={null}>About</MyText>
 				</ScrollView>

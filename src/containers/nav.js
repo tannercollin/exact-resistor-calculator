@@ -10,6 +10,7 @@ import * as menuActions from '../actions/menuActions';
 import MenuApp from '../containers/menuApp';
 import CalcApp from '../containers/calcApp';
 import HelpApp from '../containers/helpApp';
+import ExampleApp from '../containers/exampleApp';
 
 class Nav extends Component {
 	constructor(props) {
@@ -38,7 +39,6 @@ class Nav extends Component {
 				tapToClose={true}
 				openDrawerOffset={(viewport) => viewport.width - 250}
 				captureGestures={true}
-				panCloseMask={0.3}
 				closedDrawerOffset={-3}
 				styles={drawerStyles}
 				tweenHandler={(ratio) => ({
@@ -61,6 +61,8 @@ class Nav extends Component {
 									return <CalcApp />;
 								case 'help':
 									return <HelpApp />;
+								case 'example':
+									return <ExampleApp />;
 								default:
 									return <CalcApp />;
 							}

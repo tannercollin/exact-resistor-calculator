@@ -23,3 +23,9 @@ export function help() {
 		type: types.HELP
 	};
 }
+
+export function example() {
+	return {
+		type: types.EXAMPLE
+	};
+}

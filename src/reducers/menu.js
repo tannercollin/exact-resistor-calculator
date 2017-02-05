@@ -34,6 +34,13 @@ export default function menu(state = initialState, action = {}) {
 				page: 'help',
 				subtitle: 'Help',
 			};
+		case types.EXAMPLE:
+			return {
+				...state,
+				isOpen: false,
+				page: 'example',
+				subtitle: 'Example Usage',
+			};
 		default:
 			return state;
 	}
