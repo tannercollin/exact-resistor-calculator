@@ -174,7 +174,7 @@ export default class Calc extends Component {
 									{printSum()}
 								</MyText>
 								<MyText style={styles.table} selectable={true}>
-									{printPercentError()} %
+									{printPercentError()}%
 								</MyText>
 								<MyText style={styles.table} selectable={true}>
 									{printNextRes()}
