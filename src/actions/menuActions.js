@@ -36,6 +36,12 @@ export function example() {
 	};
 }
 
+export function tips() {
+	return {
+		type: types.TIPS
+	};
+}
+
 export function about() {
 	return {
 		type: types.ABOUT

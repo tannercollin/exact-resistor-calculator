@@ -48,6 +48,13 @@ export default function menu(state = initialState, action = {}) {
 				page: 'example',
 				subtitle: 'Example Usage',
 			};
+		case types.TIPS:
+			return {
+				...state,
+				isOpen: false,
+				page: 'tips',
+				subtitle: 'Tips',
+			};
 		case types.ABOUT:
 			return {
 				...state,
