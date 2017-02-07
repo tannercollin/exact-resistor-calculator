@@ -6,7 +6,7 @@ import Section from './section.js';
 
 const rowData = [
 	{
-		bgColor: 'white',
+		bgColor: 'transparent',
 		textColor: 'black',
 		cells: ['Color', '1st', '2nd', 'Multiplier', 'Tolerance'],
 	},
@@ -71,7 +71,6 @@ const rowData = [
 		cells: ['Silver', ' ', ' ', '0.01', '±10%'],
 	},
 ];
-
 
 export default class Chart extends Component {
 	constructor(props) {

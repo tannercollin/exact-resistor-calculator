@@ -5,7 +5,7 @@ import MyText from './mytext.js';
 
 const styles = {
 	main: {
-		backgroundColor: '#ffffff',
+		backgroundColor: '#fafafa',
 		flex: 1,
 	},
 	menutable: {
