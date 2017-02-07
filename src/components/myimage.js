@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Dimensions, Image, Text, View} from 'react-native';
+import {Image, Text, View} from 'react-native';
 
 export default class MyImage extends Component {
 	constructor(props) {
@@ -10,8 +10,11 @@ export default class MyImage extends Component {
 		const {view, data} = this.props;
 
 		if (view.layout) {
-			const maxHeight = view.layout.height * 0.8;
+			const maxHeight = view.layout.height * 0.4;
 			const maxWidth = view.layout.width * 0.9;
+
+			// What the width will be if the responsive limit kicks in
+			const widthResp = view.layout.width * 0.6;
 
 			const aspectRatio = data.width / data.height;
 
@@ -19,8 +22,8 @@ export default class MyImage extends Component {
 			let setHeight = maxWidth / aspectRatio;
 
 			if (setHeight > maxHeight) {
-				setHeight = maxHeight;
-				setWidth = setHeight * aspectRatio;
+				setWidth = widthResp;
+				setHeight = setWidth / aspectRatio;
 			}
 
 			return (
@@ -44,6 +47,3 @@ export default class MyImage extends Component {
 		}
 	}
 }
-
-
-
