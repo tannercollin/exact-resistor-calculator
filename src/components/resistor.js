@@ -18,7 +18,6 @@ const styles = {
 		flex: 1,
 		height: 40,
 		maxWidth: 80,
-		borderWidth: 1,
 		textAlign: 'right',
 	},
 	clearbutton: {
@@ -34,6 +33,39 @@ const styles = {
 class Resistor extends Component {
 	constructor(props) {
 		super(props);
+
+		this.state = {
+			borderWidth: 1,
+			selection: this.findEnd(),
+		}
+	}
+
+	findEnd() {
+		const value = this.props.data.value || '';
+
+		return {
+			start: value.length,
+			end: value.length,
+		};
+	}
+
+	onFocus(x) {
+		this.setState({
+			borderWidth: 1.5,
+			selection: this.findEnd(),
+		});
+	}
+
+	onBlur() {
+		this.setState({
+			borderWidth: 1,
+		});
+	}
+
+	onSelectionChange(x) {
+		this.setState({
+			selection: x.nativeEvent.selection,
+		});
 	}
 
 	render() {
@@ -53,16 +85,30 @@ class Resistor extends Component {
 		}
 
 		return data ? (
-			<View style={{flex: 1, flexDirection: 'row', justifyContent: 'center', margin: 3}}>
+			<View
+				style={{
+					flex: 1,
+					flexDirection: 'row',
+					justifyContent: 'center',
+					margin: 3,
+				}}
+			>
 				<TextInput
+					ref="textinput"
 					value={data.value || ''}
 					onChangeText={(x) => updatevalue(x)}
-					style={Object.assign({}, styles.resistorinput, {
-						borderColor: data.valid ? '#3f7d20' : 'red',
-					})}
+					style={{
+						...styles.resistorinput,
+						borderColor: data.valid ? '#619448' : 'red',
+						borderWidth: this.state.borderWidth,
+					}}
 					underlineColorAndroid={'transparent'}
 					autoCorrect={false}
 					keyboardType={'numeric'}
+					selection={this.state.selection}
+					onFocus={(x) => this.onFocus(x)}
+					onBlur={() => this.onBlur()}
+					onSelectionChange={(x) => this.onSelectionChange(x)}
 				/>
 				<Picker 
 					ref={(x) => this._picker = x}
