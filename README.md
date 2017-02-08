@@ -13,6 +13,12 @@ Then keep doing this for all the resistor values that the app recommends.
 
 Within 2-3 resistors, you'll notice the percent error from your target will drop well into a suitable range.
 
+## Demo
+
+![Demo Recording](/media/demo.gif?raw=true) ![Calculator Screenshot](/media/screenshot1_lores.png) ![Menu Screenshot](/media/screenshot3_lores.png) 
+
+Demo Video: https://www.youtube.com/watch?v=FazQK4teZ5o
+
 ## Setup
 
 Please install Exact Resistor Calculator from the Google Play Store on your Android phone for free.
