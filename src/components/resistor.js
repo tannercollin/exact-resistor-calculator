@@ -36,7 +36,10 @@ class Resistor extends Component {
 
 		this.state = {
 			borderWidth: 1,
-			selection: this.findEnd(),
+			selection: {
+				start: 0,
+				end: 0,
+			}
 		}
 	}
 
