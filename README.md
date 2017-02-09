@@ -23,6 +23,8 @@ Demo Video: https://www.youtube.com/watch?v=FazQK4teZ5o
 
 Please install Exact Resistor Calculator from the Google Play Store on your Android phone for free.
 
+https://play.google.com/store/apps/details?id=com.exactresistorcalculator
+
 ## Source Code
 
 ### License
