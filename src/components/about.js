@@ -53,7 +53,10 @@ export default class About extends Component {
 							Thanks to all the devs behind Node.js, React, React Native, and Redux.
 						</MyText>
 						<MyText>
-							Thanks to Jakub Jankiewicz for the circuit image. It and my derivatives are licensed CC BY-SA.
+							Thanks to K&E Imaging for providing the photography. All photographs are licensed CC-BY.
+						</MyText>
+						<MyText>
+							Thanks to Jakub Jankiewicz for the circuit image. It and my derivatives are licensed CC-BY-SA.
 						</MyText>
 					</Section>
 				</View>

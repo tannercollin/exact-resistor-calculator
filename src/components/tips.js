@@ -6,6 +6,21 @@ import MyImage from './myimage.js';
 import Section from './section.js';
 
 const images = {
+	img1: {
+		source: require('../images/tips1.jpg'),
+		width: 1080,
+		height: 708,
+	},
+	img2: {
+		source: require('../images/tips2.jpg'),
+		width: 1080,
+		height: 708,
+	},
+	img3: {
+		source: require('../images/tips3.jpg'),
+		width: 1080,
+		height: 708,
+	},
 	img4: {
 		source: require('../images/tips4.png'),
 		width: 1857,
@@ -33,14 +48,17 @@ export default class Tips extends Component {
 						<Section>
 							<MyText style={{fontWeight: 'bold'}}>Don't hold both resistor leads while measuring</MyText>
 							<MyText>The resistance of your body added in parallel is enough to effect the measurement of higher valued resistors. Since the purpose of this app is to help you create a precise resistance value, doing so is counterproductive.</MyText>
+							<MyImage view={viewInfo} data={images.img1} />
 						</Section>
 						<Section>
 							<MyText style={{fontWeight: 'bold'}}>Don't press the resistor leads against an ESD mat</MyText>
 							<MyText>Most ESD mats are slightly conductive to allow static charges to dissipate. This also has the problem of affecting the resistance measurement of higher valued resistors.</MyText>
+							<MyImage view={viewInfo} data={images.img2} />
 						</Section>
 						<Section>
 							<MyText style={{fontWeight: 'bold'}}>Use only one hand to hold the resistor</MyText>
 							<MyText>When measuring the resistors, use only one hand to hold the resistor to a multimeter lead. Grip the other multimeter lead by only the plastic part with your other hand. Then use the tension in the resistor's remaining lead to bring the two together and form a circuit.</MyText>
+							<MyImage view={viewInfo} data={images.img3} />
 						</Section>
 						<Section>
 							<MyText style={{fontWeight: 'bold'}}>Increase precision by adding significant figures</MyText>

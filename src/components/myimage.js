@@ -10,7 +10,7 @@ export default class MyImage extends Component {
 		const {view, data} = this.props;
 
 		if (view.layout) {
-			const maxHeight = view.layout.height * 0.4;
+			const maxHeight = view.layout.height * 0.5;
 			const maxWidth = view.layout.width * 0.9;
 
 			// What the width will be if the responsive limit kicks in
